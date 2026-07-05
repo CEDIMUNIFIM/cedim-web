@@ -1,0 +1,43 @@
+/* ==========================================
+   Design Tokens
+========================================== */
+
+/* Colors */
+:root{
+    --color-bg:#0B1120;
+    --color-surface:#111827;
+    --color-border:#1F2937;
+
+    --color-primary:#38BDF8;
+
+    --color-text:#F8FAFC;
+    --color-text-secondary:#94A3B8;
+
+    --color-success:#22C55E;
+    --color-warning:#F59E0B;
+    --color-danger:#EF4444;
+
+    /* Typography */
+    --font-family:Inter,system-ui,sans-serif;
+
+    /* Border Radius */
+    --radius-sm:6px;
+    --radius-md:12px;
+    --radius-lg:20px;
+
+    /* Spacing */
+    --space-1:4px;
+    --space-2:8px;
+    --space-3:12px;
+    --space-4:16px;
+    --space-5:24px;
+    --space-6:32px;
+    --space-7:48px;
+    --space-8:64px;
+
+    /* Container */
+    --container-width:1280px;
+
+    /* Transition */
+    --transition:250ms ease;
+}
