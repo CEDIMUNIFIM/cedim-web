@@ -102,3 +102,28 @@
 
     cursor:pointer;
 }
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 992px){
+
+    .navbar-links,
+    .navbar-cta{
+        display:none;
+    }
+
+    .navbar-toggle{
+        display:block;
+    }
+
+}
+
+.navbar-scrolled{
+
+    background:rgba(11,17,32,.95);
+
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+
+}
