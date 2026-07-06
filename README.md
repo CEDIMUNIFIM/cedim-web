@@ -1,6 +1,6 @@
 # CEDIM Web Portal
 
-Sitio web oficial del **Centro de Investigación de Mecatrónica (CEDIM)** de la Universidad Nacional de Ingeniería (UNI).
+Sitio web oficial del **Centro de Desarrollo e Investigación en Mecatrónica (CEDIM)** de la Universidad Nacional de Ingeniería (UNI).
 
 Este proyecto tiene como objetivo centralizar y difundir:
 
@@ -53,7 +53,7 @@ docs/
 
 ## 👥 Organización
 
-Proyecto mantenido por miembros del Centro de Investigación de Mecatrónica (CEDIM - UNI).
+Proyecto mantenido por miembros del Centro de Desarrollo e Investigación en Mecatrónica (CEDIM - UNI).
 
 ---
 

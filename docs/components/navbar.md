@@ -40,7 +40,7 @@ CEDIM
 
 Subtitle (optional)
 
-Centro de Investigación de Mecatrónica
+Centro de Desarrollo e Investigación en Mecatrónica
 
 ---
 
