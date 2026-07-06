@@ -548,6 +548,6 @@ GitHub API
 
 # 20. Long-Term Vision
 
-The architecture should allow the platform to evolve from a static website into a complete digital ecosystem for the Centro de Investigación de Mecatrónica.
+The architecture should allow the platform to evolve from a static website into a complete digital ecosystem for the Centro de Desarrollo e Investigación en Mecatrónica.
 
 The architecture should prioritize simplicity, scalability, maintainability, and long-term sustainability.

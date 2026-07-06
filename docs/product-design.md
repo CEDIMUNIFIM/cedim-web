@@ -7,7 +7,7 @@
 CEDIM Digital Platform
 
 **Organization**
-Centro de Investigación de Mecatrónica (CEDIM)
+Centro de Desarrollo e Investigación en Mecatrónica (CEDIM)
 Universidad Nacional de Ingeniería (UNI)
 
 ---
@@ -15,7 +15,7 @@ Universidad Nacional de Ingeniería (UNI)
 # 1. Vision
 
 The CEDIM Digital Platform aims to become the central digital ecosystem for the
-Centro de Investigación de Mecatrónica.
+Centro de Desarrollo e Investigación en Mecatrónica.
 
 Rather than being a traditional institutional website, it will be a platform that
 connects students, researchers, professors and administrators through a modern,
