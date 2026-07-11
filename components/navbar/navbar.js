@@ -1,6 +1,7 @@
-window.addEventListener("scroll", () => {
+const navbar = document.querySelector(".navbar");
+const navbarToggle = document.querySelector(".navbar-toggle");
 
-    const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
 
     if(window.scrollY > 40){
 
@@ -11,5 +12,29 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("navbar-scrolled");
 
     }
+
+});
+
+navbarToggle.addEventListener("click", () => {
+
+    const isOpen = navbar.classList.toggle("navbar-open");
+
+    navbarToggle.setAttribute("aria-expanded", isOpen);
+
+    navbarToggle.textContent = isOpen ? "✕" : "☰";
+
+});
+
+document.querySelectorAll(".navbar-links a").forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        navbar.classList.remove("navbar-open");
+
+        navbarToggle.setAttribute("aria-expanded", "false");
+
+        navbarToggle.textContent = "☰";
+
+    });
 
 });
