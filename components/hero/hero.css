@@ -2,7 +2,10 @@
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(180deg,#0B1120 0%,#111827 100%);
+
+    background:
+        url("../../assets/img/backgrounds/grid.svg"),
+        radial-gradient(circle at top,#0F172A 0%,#020617 100%);
 }
 
 .hero-container{
