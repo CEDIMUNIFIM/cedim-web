@@ -12,7 +12,7 @@ There is no build/lint/test tooling in this repo. To view changes, open `index.h
 
 ## Architecture
 
-**Component folders vs. `index.html` are not wired together automatically.** `components/<name>/` folders (e.g. `components/navbar/`, `components/hero/`) hold a component's markup (`.html`), styles (`.css`), and behavior (`.js`) in isolation — think of them as source-of-truth snippets/previews, not includes. `index.html` currently contains hand-copied markup for the navbar and hero sections; there is no templating engine, so when a component's HTML changes, the corresponding markup in `index.html` must be updated by hand to match. Several top-level files under `components/` (`buttons.html`, `cards.html`, `footer.html`, `modal.html`) are empty placeholders for components not yet built.
+**Component folders vs. `index.html` are not wired together automatically.** `components/<name>/` folders (e.g. `components/navbar/`, `components/hero/`, `components/footer/`) hold a component's markup (`.html`), styles (`.css`), and behavior (`.js`) in isolation — think of them as source-of-truth snippets/previews, not includes. `index.html` currently contains hand-copied markup for the navbar, hero, and footer sections; there is no templating engine, so when a component's HTML changes, the corresponding markup in `index.html` must be updated by hand to match. Several top-level files under `components/` (`buttons.html`, `cards.html`, `modal.html`) are empty placeholders for components not yet built.
 
 **CSS loads through a single entry point with a fixed cascade order.** `index.html` only links `assets/css/styles.css`, which `@import`s in this order: `variables.css` → `layout.css` → `components.css` → `utilities.css`. `components.css` in turn `@import`s each component's own stylesheet by relative path (e.g. `../../components/navbar/navbar.css`). When adding a new component's CSS, register its `@import` in `assets/css/components.css` — otherwise it will never be loaded from `index.html`.
 
@@ -30,6 +30,6 @@ There is no build/lint/test tooling in this repo. To view changes, open `index.h
 
 ## Branches
 
-- `main` — production
+- `main` — production (GitHub Pages serves from here)
 - `develop` — active development
-- Feature work also happens on `feature/*` branches (e.g. `feature/navbar`)
+- Feature work may also happen on short-lived `feature/*` branches, merged into `develop` and deleted once merged
