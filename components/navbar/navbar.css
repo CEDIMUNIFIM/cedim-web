@@ -68,25 +68,7 @@
     color:var(--color-primary);
 }
 
-.navbar-cta{
-
-    background:var(--color-primary);
-
-    color:var(--color-bg);
-
-    padding:.75rem 1.5rem;
-
-    border-radius:var(--radius-md);
-
-    font-weight:600;
-
-    transition:var(--transition);
-}
-
-.navbar-cta:hover{
-
-    transform:translateY(-2px);
-}
+/* .navbar-cta solo posiciona: el estilo visual viene de .btn .btn-primary */
 
 .navbar-toggle{
 
@@ -109,8 +91,10 @@
 
 @media (max-width: 992px){
 
-    .navbar-links,
-    .navbar-cta{
+    /* .navbar prefijado: sin él, .btn (importado despues) empata en
+       especificidad y volveria a mostrar el CTA con el menu cerrado */
+    .navbar .navbar-links,
+    .navbar .navbar-cta{
         display:none;
     }
 
