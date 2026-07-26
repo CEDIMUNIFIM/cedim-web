@@ -1,10 +1,14 @@
 /* ==========================================
-   Cards — render de proyectos
+   Cards — render de proyectos, convocatorias y talleres
 ========================================== */
 
-/* Los datos NO viven aquí: están en assets/js/data/projects.js, que
-   index.html carga antes que este archivo. Para cambiar el contenido
-   se edita ese archivo; este solo se ocupa de dibujarlo. */
+/* Los datos NO viven aquí: están en assets/js/data/, y cada página
+   carga los que necesita ANTES que este archivo. Para cambiar el
+   contenido se editan esos archivos; este solo se ocupa de dibujarlo.
+
+   Construido con la API del DOM en lugar de innerHTML: los datos son
+   texto escrito por usuarios, y textContent evita que ese contenido
+   se interprete como HTML. */
 
 /* Los datos guardan solo el nombre del archivo de imagen, no la ruta.
    Todas las páginas viven en la raíz, así que el prefijo es uno solo. */
@@ -14,9 +18,81 @@ const CARD_DETAIL_BASE = "project.html?id=";
 /* Cuántos proyectos se muestran en la portada */
 const FEATURED_COUNT = 3;
 
-/* Construido con la API del DOM en lugar de innerHTML: los datos son
-   texto escrito por usuarios, y textContent evita que ese contenido
-   se interprete como HTML. */
+/* ==========================================
+   Piezas compartidas por los tres tipos
+========================================== */
+
+function createStatus(status,label){
+
+    const element = document.createElement("span");
+    element.className = `card-status card-status-${status}`;
+    element.textContent = label;
+
+    return element;
+}
+
+function createTitle(text){
+
+    const title = document.createElement("h3");
+    title.className = "card-title";
+    title.textContent = text;
+
+    return title;
+}
+
+function createDescription(text){
+
+    const description = document.createElement("p");
+    description.className = "card-description";
+    description.textContent = text;
+
+    return description;
+}
+
+/* Devuelve null cuando no hay etiquetas, para que quien llame decida
+   no añadir nada en lugar de dejar un contenedor vacío ocupando hueco.
+   El || [] cubre que alguien omita el campo al editar los datos. */
+function createTags(tags){
+
+    const list = tags || [];
+
+    if(list.length === 0) return null;
+
+    const container = document.createElement("div");
+    container.className = "card-tags";
+
+    list.forEach((tag) => {
+        const item = document.createElement("span");
+        item.className = "card-tag";
+        item.textContent = tag;
+        container.append(item);
+    });
+
+    return container;
+}
+
+function createFooter(content){
+
+    const footer = document.createElement("div");
+    footer.className = "card-footer";
+    footer.append(content);
+
+    return footer;
+}
+
+function createMeta(text){
+
+    const meta = document.createElement("span");
+    meta.className = "card-meta";
+    meta.textContent = text;
+
+    return meta;
+}
+
+/* ==========================================
+   Proyectos
+========================================== */
+
 function createProjectCard(project){
 
     const card = document.createElement("article");
@@ -50,55 +126,79 @@ function createProjectCard(project){
 
     title.append(link);
 
-    const status = document.createElement("span");
-    status.className = `card-status card-status-${project.status}`;
-    status.textContent = project.statusLabel;
+    header.append(title,createStatus(project.status,project.statusLabel));
 
-    header.append(title,status);
+    card.append(header,createDescription(project.description));
 
-    const description = document.createElement("p");
-    description.className = "card-description";
-    description.textContent = project.description;
+    const tags = createTags(project.tags);
+    if(tags) card.append(tags);
 
-    card.append(header,description);
-
-    /* || [] por si alguien omite el campo al editar los datos a mano:
-       vale más una tarjeta sin etiquetas que la sección entera rota. */
-    const tagList = project.tags || [];
-
-    if(tagList.length > 0){
-
-        const tags = document.createElement("div");
-        tags.className = "card-tags";
-
-        tagList.forEach((tag) => {
-            const item = document.createElement("span");
-            item.className = "card-tag";
-            item.textContent = tag;
-            tags.append(item);
-        });
-
-        card.append(tags);
-    }
-
-    const footer = document.createElement("div");
-    footer.className = "card-footer";
-
-    const meta = document.createElement("span");
-    meta.className = "card-meta";
-    meta.textContent = project.year;
-
-    footer.append(meta);
-
-    card.append(footer);
+    card.append(createFooter(createMeta(project.year)));
 
     return card;
 }
 
-/* Dibuja en el contenedor indicado si existe en la página actual.
-   index.html usa #featured-projects y projects.html #projects-grid,
-   así que el mismo archivo sirve a ambas sin condicionales por página. */
-function renderProjectsInto(containerId,list){
+/* ==========================================
+   Convocatorias
+========================================== */
+
+function createCallCard(call){
+
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const header = document.createElement("div");
+    header.className = "card-header";
+
+    header.append(createTitle(call.title),createStatus(call.status,call.statusLabel));
+
+    card.append(header,createDescription(call.description));
+
+    /* Con botón si la convocatoria sigue abierta; si no, el texto al
+       pie que explique desde cuándo está cerrada. */
+    if(call.actionLabel){
+
+        const action = document.createElement("a");
+        action.className = "btn btn-outline";
+        action.href = call.actionHref;
+        action.textContent = call.actionLabel;
+
+        card.append(createFooter(action));
+
+    }else if(call.meta){
+
+        card.append(createFooter(createMeta(call.meta)));
+    }
+
+    return card;
+}
+
+/* ==========================================
+   Talleres
+========================================== */
+
+function createWorkshopCard(workshop){
+
+    const card = document.createElement("article");
+    card.className = "card";
+
+    card.append(createTitle(workshop.title),createDescription(workshop.description));
+
+    const tags = createTags(workshop.tags);
+    if(tags) card.append(tags);
+
+    if(workshop.meta) card.append(createFooter(createMeta(workshop.meta)));
+
+    return card;
+}
+
+/* ==========================================
+   Render
+========================================== */
+
+/* Dibuja en el contenedor indicado si existe en la página actual, así
+   el mismo archivo sirve a todas las páginas sin condicionales. */
+function renderCardsInto(containerId,list,createCard,emptyMessage){
 
     const grid = document.getElementById(containerId);
 
@@ -108,20 +208,47 @@ function renderProjectsInto(containerId,list){
 
         const empty = document.createElement("p");
         empty.className = "cards-empty";
-        empty.textContent = "No projects published yet.";
+        empty.textContent = emptyMessage;
 
         grid.replaceChildren(empty);
 
         return;
     }
 
-    grid.replaceChildren(...list.map(createProjectCard));
+    grid.replaceChildren(...list.map(createCard));
 }
 
-/* Si projects.js tiene un error de sintaxis nunca llega a definirse.
-   Sin esta guarda la sección entera reventaría en silencio; así al
-   menos cae en el estado vacío y el resto de la página sigue viva. */
+/* Si un archivo de datos tiene un error de sintaxis nunca llega a
+   definirse. Sin estas guardas la sección reventaría en silencio; así
+   cae en el estado vacío y el resto de la página sigue viva. */
 const projectList = typeof projects === "undefined" ? [] : projects;
+const callList = typeof openCalls === "undefined" ? [] : openCalls;
+const workshopList = typeof workshops === "undefined" ? [] : workshops;
 
-renderProjectsInto("projects-grid",projectList);
-renderProjectsInto("featured-projects",projectList.slice(0,FEATURED_COUNT));
+renderCardsInto(
+    "projects-grid",
+    projectList,
+    createProjectCard,
+    "No projects published yet."
+);
+
+renderCardsInto(
+    "featured-projects",
+    projectList.slice(0,FEATURED_COUNT),
+    createProjectCard,
+    "No projects published yet."
+);
+
+renderCardsInto(
+    "calls-grid",
+    callList,
+    createCallCard,
+    "There are no open calls at the moment. Follow us on social media for the next intake."
+);
+
+renderCardsInto(
+    "workshops-grid",
+    workshopList,
+    createWorkshopCard,
+    "There are no workshops scheduled at the moment."
+);

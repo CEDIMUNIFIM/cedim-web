@@ -22,53 +22,8 @@
         for research support.
       </p>
 
-      <div class="cards-grid">
-
-        <article class="card">
-          <div class="card-header">
-            <h3 class="card-title">New member intake 2026-I</h3>
-            <span class="card-status card-status-active">Open</span>
-          </div>
-          <p class="card-description">
-            Undergraduate students joining the research lines in robotics, control,
-            and embedded systems. No prior experience required, but weekly
-            availability for laboratory work is expected.
-          </p>
-          <div class="card-footer">
-            <a href="#contact" class="btn btn-outline">Apply</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <h3 class="card-title">National Robotics Competition</h3>
-            <span class="card-status card-status-active">Open</span>
-          </div>
-          <p class="card-description">
-            Registration of teams representing the faculty at the national
-            university competition. Selected teams receive technical mentoring
-            and laboratory access.
-          </p>
-          <div class="card-footer">
-            <a href="#contact" class="btn btn-outline">View terms</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <h3 class="card-title">Mechatronics research grant</h3>
-            <span class="card-status card-status-closed">Closed</span>
-          </div>
-          <p class="card-description">
-            Financial support for thesis students whose projects are tied to the
-            centre's research lines.
-          </p>
-          <div class="card-footer">
-            <span class="card-meta">Closed in March 2026</span>
-          </div>
-        </article>
-
-      </div>
+      <!-- Rendered by components/cards/cards.js -->
+      <div id="calls-grid" class="cards-grid"></div>
 
     </div>
   </main>
@@ -78,5 +33,9 @@
   <script src="components/site-chrome/site-chrome.js"></script>
   <script src="components/navbar/navbar.js"></script>
   <script src="components/footer/footer.js"></script>
+
+  <!-- Data goes before the renderer that consumes it -->
+  <script src="assets/js/data/open-calls.js"></script>
+  <script src="components/cards/cards.js"></script>
 </body>
 </html>
