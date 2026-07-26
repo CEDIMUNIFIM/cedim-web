@@ -16,9 +16,12 @@
     border-bottom:1px solid var(--color-border);
 }
 
+/* min-height y no height: con altura fija, al abrirse el menú en móvil
+   los enlaces se envolvían FUERA de la caja y quedaban sin fondo
+   detrás. Así la barra crece y su fondo los cubre. */
 .navbar-container{
 
-    height:72px;
+    min-height:72px;
 
     display:flex;
 
@@ -27,7 +30,15 @@
     align-items:center;
 }
 
+/* Los 72px se sostienen desde la fila superior, para que abrir el
+   menú no encoja la barra. */
 .navbar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:72px;
 
     font-size:1.4rem;
 
@@ -107,12 +118,25 @@
     }
 
     .navbar-toggle{
-        display:block;
+        display:flex;
+        align-items:center;
         order:2;
+
+        /* Sostiene los 72px de la fila superior junto con el logo */
+        min-height:72px;
     }
 
     .navbar-logo{
         order:1;
+    }
+
+    /* Cerrada, la barra es translúcida (.70) a propósito. Abierta ocupa
+       buena parte de la pantalla, y ese mismo fondo dejaría ver el
+       contenido por debajo: aquí se vuelve opaca. Sin depender de
+       backdrop-filter, que varios navegadores móviles ignoran. */
+    .navbar.navbar-open{
+        background:var(--color-bg);
+        box-shadow:0 12px 32px rgba(0,0,0,.45);
     }
 
     .navbar.navbar-open .navbar-container{
