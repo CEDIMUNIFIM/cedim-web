@@ -23,65 +23,8 @@
         the faculty.
       </p>
 
-      <div class="cards-grid">
-
-        <article class="card">
-          <h3 class="card-title">Introduction to ROS 2</h3>
-          <p class="card-description">
-            Framework fundamentals, nodes, topics, and simulation in Gazebo.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Robotics</span>
-            <span class="card-tag">Intermediate</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-meta">8 sessions</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 class="card-title">CAD design with SolidWorks</h3>
-          <p class="card-description">
-            Part modelling, assemblies, and technical drawings for prototyping.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Design</span>
-            <span class="card-tag">Beginner</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-meta">6 sessions</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 class="card-title">STM32 microcontrollers</h3>
-          <p class="card-description">
-            Embedded systems programming, peripherals, and serial communication.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Embedded</span>
-            <span class="card-tag">Intermediate</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-meta">10 sessions</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 class="card-title">Computer vision with OpenCV</h3>
-          <p class="card-description">
-            Image processing, object detection, and camera calibration.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Vision</span>
-            <span class="card-tag">Intermediate</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-meta">8 sessions</span>
-          </div>
-        </article>
-
-      </div>
+      <!-- Rendered by components/cards/cards.js -->
+      <div id="workshops-grid" class="cards-grid"></div>
 
     </div>
   </main>
@@ -91,5 +34,9 @@
   <script src="components/site-chrome/site-chrome.js"></script>
   <script src="components/navbar/navbar.js"></script>
   <script src="components/footer/footer.js"></script>
+
+  <!-- Data goes before the renderer that consumes it -->
+  <script src="assets/js/data/workshops.js"></script>
+  <script src="components/cards/cards.js"></script>
 </body>
 </html>
