@@ -1,58 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CEDIM | Centro de Desarrollo e Investigación en Mecatrónica</title>
+  <title>CEDIM | Mechatronics Research and Development Centre</title>
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-      <div class="container navbar-container">
-
-          <a href="#" class="navbar-logo">
-              <span class="logo-text">CEDIM</span>
-          </a>
-
-          <nav class="navbar-menu" aria-label="Main Navigation">
-              <ul class="navbar-links">
-
-                  <li><a href="#home">Home</a></li>
-
-                  <li><a href="#about">About</a></li>
-
-                  <li><a href="#research">Research</a></li>
-
-                  <li><a href="#projects">Projects</a></li>
-
-                  <li><a href="#calls">Open Calls</a></li>
-
-                  <li><a href="#workshops">Workshops</a></li>
-
-                  <li><a href="#contact">Contact</a></li>
-
-              </ul>
-          </nav>
-
-          <a href="#" class="navbar-cta btn btn-primary">
-              Join CEDIM
-          </a>
-
-          <button
-              class="navbar-toggle"
-              aria-label="Open navigation menu"
-              aria-expanded="false">
-
-              ☰
-
-          </button>
-
-      </div>
-  </header>
+  <div id="site-navbar"></div>
 
   <!-- HERO -->
   <section id="home" class="hero">
@@ -61,7 +19,7 @@
         <div class="hero-content">
 
             <span class="hero-badge">
-                Centro de Desarrollo e Investigación en Mecatrónica
+                Mechatronics Research and Development Centre
             </span>
 
             <h1 class="hero-title">
@@ -73,11 +31,11 @@
             </p>
 
             <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
+                <a href="projects.html" class="btn btn-primary">
                     Explore Projects
                 </a>
 
-                <a href="#calls" class="btn btn-secondary">
+                <a href="open-calls.html" class="btn btn-secondary">
                     Open Calls
                 </a>
             </div>
@@ -95,112 +53,42 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT (summary; the full page is about.html) -->
   <section id="about" class="section">
-    <h2>Sobre CEDIM</h2>
-    <p>
-      El Centro de Desarrollo e Investigación en Mecatrónica (CEDIM) promueve el desarrollo
-      de proyectos tecnológicos, investigación aplicada y formación de estudiantes
-      en ingeniería.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2>Proyectos Destacados</h2>
-    <p>Próximamente se mostrarán los proyectos en desarrollo.</p>
-  </section>
-
-  <!-- CALLS -->
-  <section id="calls" class="section">
-    <h2>Convocatorias</h2>
-    <p>Próximamente se publicarán las convocatorias activas.</p>
-  </section>
-
-  <!-- WORKSHOPS -->
-  <section id="workshops" class="section">
-    <h2>Talleres</h2>
-    <p>Espacio de capacitación técnica y formación continua.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="contact" class="footer">
-    <div class="container footer-container">
-
-        <div class="footer-brand">
-            <a href="#" class="footer-logo">
-                <span class="logo-text">CEDIM</span>
-            </a>
-            <p class="footer-description">
-                Centro de Desarrollo e Investigación en Mecatrónica de la Universidad Nacional de Ingeniería.
-            </p>
-        </div>
-
-        <nav class="footer-links" aria-label="Footer Navigation">
-            <h3 class="footer-heading">Enlaces</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#calls">Open Calls</a></li>
-                <li><a href="#workshops">Workshops</a></li>
-            </ul>
-        </nav>
-
-        <div class="footer-contact">
-            <h3 class="footer-heading">Contacto</h3>
-            <ul>
-                <li>
-                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                    </svg>
-                    <a href="mailto:cedim.uni@uni.edu.pe">cedim.uni@uni.edu.pe</a>
-                </li>
-                <li>
-                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span>Facultad de Ingeniería Mecánica, Pabellón A3, 3er piso — Av. Túpac Amaru 210, Rímac, Lima, Perú</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="footer-social">
-            <h3 class="footer-heading">Síguenos</h3>
-            <div class="footer-social-links">
-                <a href="https://web.facebook.com/cedimuni" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/cedim.uni/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/centro-de-desarrollo-e-investigaci%C3%B3n-en-mecatr%C3%B3nica-fim-b24919340" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect width="4" height="12" x="2" y="9"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
+    <div class="container">
+      <h2 class="section-title">About CEDIM</h2>
+      <p class="page-intro">
+        The Mechatronics Research and Development Centre (CEDIM) drives technological
+        projects, applied research, and the technical training of engineering students
+        at Universidad Nacional de Ingeniería.
+      </p>
+      <a href="about.html" class="btn btn-outline">Learn about the centre</a>
     </div>
+  </section>
 
-    <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> CEDIM - Universidad Nacional de Ingeniería. Todos los derechos reservados.</p>
+  <!-- FEATURED PROJECTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <!-- Rendered by components/cards/cards.js -->
+      <div id="featured-projects" class="cards-grid"></div>
+
+      <div class="section-actions">
+        <a href="projects.html" class="btn btn-outline">View all projects</a>
+      </div>
     </div>
-  </footer>
+  </section>
 
+  <div id="site-footer"></div>
+
+  <!-- The chrome is injected before the scripts that query it -->
+  <script src="components/site-chrome/site-chrome.js"></script>
   <script src="components/navbar/navbar.js"></script>
   <script src="components/footer/footer.js"></script>
+
+  <!-- Data goes before the renderer that consumes it -->
+  <script src="assets/js/data/projects.js"></script>
+  <script src="components/cards/cards.js"></script>
 </body>
 </html>

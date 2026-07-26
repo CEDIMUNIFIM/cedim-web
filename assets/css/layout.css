@@ -10,6 +10,10 @@
 
 html{
     scroll-behavior:smooth;
+
+    /* Alto del navbar fijo: sin esto los enlaces del menú dejan el
+       inicio de cada sección oculto detrás de la barra */
+    scroll-padding-top:72px;
 }
 
 body{
@@ -41,6 +45,54 @@ a{
 
 .section-title{
     margin-bottom:var(--space-6);
+}
+
+/* Cabecera de las páginas interiores. El padding superior compensa
+   el navbar fijo (72px), que si no taparía el título al cargar. */
+.page{
+    padding-top:calc(72px + var(--space-7));
+    padding-bottom:var(--space-8);
+}
+
+.page-title{
+    margin:0;
+    font-size:2.5rem;
+    line-height:1.15;
+}
+
+.page-intro{
+    max-width:70ch;
+    margin:var(--space-4) 0 var(--space-7);
+
+    color:var(--color-text-secondary);
+    font-size:1.1rem;
+}
+
+/* Bloque de texto corrido */
+.prose{
+    max-width:70ch;
+    margin-bottom:var(--space-7);
+}
+
+.prose p{
+    color:var(--color-text-secondary);
+}
+
+/* Botones al cierre de una sección */
+.section-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--space-3);
+
+    margin-top:var(--space-6);
+}
+
+@media (max-width: 992px){
+
+    .page-title{
+        font-size:2rem;
+    }
+
 }
 
 .grid{

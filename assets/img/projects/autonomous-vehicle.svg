@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Autonomous vehicle with sensor illustration">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#1F2937"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#0F172A"/>
+  <rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M215 235h210v-40l-45-40h-120l-45 40z"/>
+    <circle cx="265" cy="260" r="26"/>
+    <circle cx="375" cy="260" r="26"/>
+    <path d="M320 155v-30"/>
+  </g>
+  <g fill="none" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity=".5">
+    <path d="M430 175l70-40M430 200h80M430 225l70 40"/>
+  </g>
+  <circle cx="320" cy="118" r="10" fill="#38BDF8"/>
+</svg>

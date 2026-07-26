@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Articulated robotic arm illustration">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#1F2937"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#0F172A"/>
+  <rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M250 300h140"/>
+    <path d="M320 300V205"/>
+    <path d="M320 205l95-60"/>
+    <path d="M415 145l55 42"/>
+    <path d="M470 187l-6 26M470 187l26 6"/>
+  </g>
+  <g fill="#38BDF8">
+    <circle cx="320" cy="300" r="11"/>
+    <circle cx="320" cy="205" r="11"/>
+    <circle cx="415" cy="145" r="11"/>
+  </g>
+</svg>

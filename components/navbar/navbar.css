@@ -68,6 +68,14 @@
     color:var(--color-primary);
 }
 
+/* La marca site-chrome.js según el archivo que se esté viendo */
+.navbar-links a.is-active{
+
+    color:var(--color-text);
+
+    font-weight:600;
+}
+
 /* .navbar-cta solo posiciona: el estilo visual viene de .btn .btn-primary */
 
 .navbar-toggle{
