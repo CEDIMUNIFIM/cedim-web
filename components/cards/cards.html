@@ -1,0 +1,56 @@
+<!-- Variantes del componente Cards (referencia).
+     Las tarjetas de proyecto no se escriben a mano: las genera
+     cards.js. Este archivo documenta la estructura que produce ese
+     render y las variantes estáticas. -->
+
+<div class="cards-grid">
+
+    <!-- Project card (generada por cards.js).
+         El enlace del título se estira sobre toda la tarjeta vía CSS. -->
+    <article class="card card-project">
+        <img class="card-image" src="../../assets/img/projects/robotic-arm.svg" alt="" loading="lazy">
+        <div class="card-header">
+            <h3 class="card-title">
+                <a href="../../project.html?id=robotic-arm">6-DOF Robotic Arm</a>
+            </h3>
+            <span class="card-status card-status-active">In progress</span>
+        </div>
+        <p class="card-description">
+            Articulated manipulator with inverse kinematics for precision tasks in the laboratory.
+        </p>
+        <div class="card-tags">
+            <span class="card-tag">Robotics</span>
+            <span class="card-tag">ROS 2</span>
+        </div>
+        <div class="card-footer">
+            <span class="card-meta">2026</span>
+        </div>
+    </article>
+
+    <!-- Announcement card -->
+    <article class="card">
+        <div class="card-header">
+            <h3 class="card-title">New member intake</h3>
+            <span class="card-status card-status-active">Open</span>
+        </div>
+        <p class="card-description">Call description.</p>
+        <div class="card-footer">
+            <a href="#" class="btn btn-outline">Apply</a>
+        </div>
+    </article>
+
+    <!-- Workshop card -->
+    <article class="card">
+        <h3 class="card-title">Introduction to ROS 2</h3>
+        <p class="card-description">Workshop description.</p>
+        <div class="card-footer">
+            <span class="card-meta">8 sessions</span>
+        </div>
+    </article>
+
+</div>
+
+<!-- Estado vacío -->
+<div class="cards-grid">
+    <p class="cards-empty">No projects published yet.</p>
+</div>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Upper-limb exoskeleton illustration">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#1F2937"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#0F172A"/>
+  <rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M255 95h60"/>
+    <path d="M285 95v70"/>
+    <path d="M285 165l70 45"/>
+    <path d="M355 210v65"/>
+    <path d="M325 275h60"/>
+    <path d="M255 130h60M320 190l30 -20M330 255h50"/>
+  </g>
+  <g fill="#F59E0B">
+    <circle cx="285" cy="165" r="12"/>
+    <circle cx="355" cy="210" r="12"/>
+  </g>
+</svg>
