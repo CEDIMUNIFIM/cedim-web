@@ -23,8 +23,12 @@
      statusLabel  Texto visible de la etiqueta (libre)
      actionLabel  Texto del botón. Dejar "" si no lleva botón
                   (por ejemplo, en una convocatoria ya cerrada).
-     actionHref   A dónde lleva el botón. "#contact" baja al pie de
-                  página, donde está el correo de contacto.
+     actionHref   URL del formulario de postulación (Google Forms o
+                  Microsoft Forms). Va la dirección completa, empezando
+                  por https://. Al ser externa el botón se abre en otra
+                  pestaña automáticamente.
+                  Si se deja "#contact" baja al pie de la página, donde
+                  está el correo — úsalo solo si aún no hay formulario.
      meta         Texto pequeño al pie, para cuando NO hay botón.
                   Dejar "" si no se usa.
 
