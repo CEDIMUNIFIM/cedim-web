@@ -7,6 +7,33 @@
   <!-- project-detail.js replaces this with the project name -->
   <title>Project | CEDIM</title>
 
+  <meta name="description" content="A CEDIM project: applied engineering developed by students at the Mechatronics Research and Development Centre of Universidad Nacional de Ingeniería." />
+
+  <!-- OJO: estas etiquetas son genéricas y NO cambian por proyecto.
+       Los rastreadores de Facebook, LinkedIn y WhatsApp no ejecutan
+       JavaScript, así que nunca ven lo que project-detail.js escribe:
+       leen solo este HTML. Por eso cualquier ?id= compartido muestra
+       la misma vista previa. Para tener vista previa por proyecto
+       habría que generar un HTML por proyecto, lo que rompería el
+       "editar datos, no código" que sostiene esta arquitectura.
+       Se omiten og:url y canonical a propósito: al no poder incluir
+       el ?id=, fijarlos agruparía todos los proyectos en una sola
+       URL para las redes. -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CEDIM" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="CEDIM Project" />
+  <meta property="og:description" content="Applied engineering developed by students at the Mechatronics Research and Development Centre of Universidad Nacional de Ingeniería." />
+  <meta property="og:image" content="https://cedimunifim.github.io/cedim-web/assets/img/social/og-cedim.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="960" />
+  <meta property="og:image:alt" content="CEDIM — Building the Future of Mechatronics" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CEDIM Project" />
+  <meta name="twitter:description" content="Applied engineering developed by students at the Mechatronics Research and Development Centre of Universidad Nacional de Ingeniería." />
+  <meta name="twitter:image" content="https://cedimunifim.github.io/cedim-web/assets/img/social/og-cedim.jpg" />
+
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 

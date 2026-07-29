@@ -71,13 +71,32 @@ function createTags(tags){
     return container;
 }
 
-function createFooter(content){
+function createFooter(...content){
 
     const footer = document.createElement("div");
     footer.className = "card-footer";
-    footer.append(content);
+    footer.append(...content);
 
     return footer;
+}
+
+/* Botón de acción. Los formularios del centro viven en Google Forms /
+   Microsoft Forms, así que estos enlaces salen del sitio: cuando la
+   URL es externa se abre en otra pestaña y se añade rel="noopener"
+   para que la página destino no pueda tocar la nuestra. */
+function createAction(label,href){
+
+    const action = document.createElement("a");
+    action.className = "btn btn-outline";
+    action.href = href;
+    action.textContent = label;
+
+    if(/^https?:\/\//.test(href)){
+        action.target = "_blank";
+        action.rel = "noopener noreferrer";
+    }
+
+    return action;
 }
 
 function createMeta(text){
@@ -154,16 +173,11 @@ function createCallCard(call){
 
     card.append(header,createDescription(call.description));
 
-    /* Con botón si la convocatoria sigue abierta; si no, el texto al
-       pie que explique desde cuándo está cerrada. */
-    if(call.actionLabel){
+    /* Con botón al formulario si la convocatoria sigue abierta; si no,
+       el texto al pie que explique desde cuándo está cerrada. */
+    if(call.actionLabel && call.actionHref){
 
-        const action = document.createElement("a");
-        action.className = "btn btn-outline";
-        action.href = call.actionHref;
-        action.textContent = call.actionLabel;
-
-        card.append(createFooter(action));
+        card.append(createFooter(createAction(call.actionLabel,call.actionHref)));
 
     }else if(call.meta){
 
@@ -187,7 +201,17 @@ function createWorkshopCard(workshop){
     const tags = createTags(workshop.tags);
     if(tags) card.append(tags);
 
-    if(workshop.meta) card.append(createFooter(createMeta(workshop.meta)));
+    /* El pie admite duración y botón de inscripción a la vez; el CSS
+       los separa a extremos opuestos. */
+    const footerParts = [];
+
+    if(workshop.meta) footerParts.push(createMeta(workshop.meta));
+
+    if(workshop.actionLabel && workshop.actionHref){
+        footerParts.push(createAction(workshop.actionLabel,workshop.actionHref));
+    }
+
+    if(footerParts.length > 0) card.append(createFooter(...footerParts));
 
     return card;
 }
