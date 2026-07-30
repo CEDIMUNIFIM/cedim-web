@@ -10,13 +10,15 @@ The site presents the centre's research lines, projects, open calls, and worksho
 
 ## Publishing content
 
-**You do not need to know HTML to publish content.** Everything that changes regularly lives in three files under `assets/js/data/`:
+**You do not need to know HTML to publish content.** Everything that changes regularly lives in five files under `assets/js/data/`:
 
 | To publish a… | Edit this file |
 |---|---|
 | Project | `assets/js/data/projects.js` |
 | Open call | `assets/js/data/open-calls.js` |
 | Workshop | `assets/js/data/workshops.js` |
+| Statistic (home page figures) | `assets/js/data/stats.js` |
+| Partner | `assets/js/data/partners.js` |
 
 Each file starts with a comment explaining every field, in Spanish, written for non-developers.
 
@@ -60,6 +62,7 @@ workshops.html        Workshops
 
 assets/
 ├── css/              Single entry point: styles.css
+├── fonts/            Self-hosted Inter (variable font + OFL license)
 ├── js/data/          ← Editable content lives here
 └── img/              Illustrations, logos, social preview
 

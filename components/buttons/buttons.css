@@ -38,13 +38,17 @@
    Variants
 ========================================== */
 
+/* Degradado y no color plano: es el único botón que debe llamar la
+   atención por encima de todo lo demás. El texto oscuro mantiene
+   contraste AA sobre ambos extremos del degradado. */
 .btn-primary{
-    background:var(--color-primary);
+    background:linear-gradient(135deg,var(--color-primary),var(--color-accent));
     color:var(--color-bg);
 }
 
 .btn-primary:hover{
     transform:translateY(-2px);
+    box-shadow:var(--shadow-glow);
 }
 
 .btn-secondary{

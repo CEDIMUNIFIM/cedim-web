@@ -18,6 +18,12 @@
 
     --color-primary:#38BDF8;
 
+    /* Segundo acento, solo para degradados junto a --color-primary
+       (título del hero, botón primario, círculos del hero). Nunca va
+       solo: un violeta suelto fuera de un degradado rompería la
+       paleta de un solo acento del resto del sitio. */
+    --color-accent:#818CF8;
+
     --color-text:#F8FAFC;
     --color-text-secondary:#94A3B8;
 
@@ -55,10 +61,13 @@
     --radius-md:12px;
     --radius-lg:20px;
 
-    /* Shadows. Dos niveles porque solo hay dos en uso, ambos en el
-       navbar: al hacer scroll y con el menú móvil abierto. */
+    /* Shadows. md y lg son las del navbar (scroll y menú abierto);
+       glow es la sombra tintada de hover en tarjetas y botón primario.
+       El rgba repite el valor de --color-primary porque una sombra no
+       puede componerse desde otro token sin color-mix. */
     --shadow-md:0 8px 24px rgba(0,0,0,.25);
     --shadow-lg:0 12px 32px rgba(0,0,0,.45);
+    --shadow-glow:0 8px 32px rgba(56,189,248,.22);
 
     /* Spacing */
     --space-1:4px;
