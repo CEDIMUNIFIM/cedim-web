@@ -18,6 +18,7 @@ Order:
 
 */
 
+@import url("../../components/site-chrome/site-chrome.css");
 @import url("../../components/navbar/navbar.css");
 @import url("../../components/hero/hero.css");
 @import url("../../components/buttons/buttons.css");

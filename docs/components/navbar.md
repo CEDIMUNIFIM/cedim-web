@@ -1,6 +1,6 @@
 # Navbar Component Specification
 
-Version: 1.1
+Version: 1.2
 
 ---
 
@@ -42,8 +42,14 @@ page content with nothing behind them. The logo and the toggle each carry
 ## Layout
 
 ```
-Logo | Navigation Links | CTA Button | ☰ (mobile only)
+Logo | ☰ (mobile only) | Navigation Links | CTA Button
 ```
+
+The ☰ toggle sits right after the logo **in the markup**, and the CSS
+uses no `order` property. It used to: the toggle was last in the DOM and
+reordered visually with `order`, so after opening the menu, Tab jumped
+out of the bar instead of into the links. Markup order, visual order and
+tab order are now the same thing.
 
 ---
 
@@ -101,8 +107,9 @@ While open, the bar turns fully opaque. The closed bar is translucent
 (`.70`) on purpose, but that reads badly across half a screen — and
 several mobile browsers ignore `backdrop-filter`, which made it worse.
 
-Clicking any link closes the menu, and the toggle swaps ☰ for ✕ while
-keeping `aria-expanded` in sync.
+Clicking any link closes the menu, and Escape closes it too, returning
+focus to the toggle. Class, `aria-expanded` and the ☰/✕ icon are all set
+by one function (`setMenuOpen` in `navbar.js`) so they cannot disagree.
 
 ---
 
@@ -123,12 +130,17 @@ Fixed at all times
 ## Accessibility
 
 - `aria-label` on the nav and on the toggle
-- `aria-expanded` updated on every toggle
+- `aria-expanded` updated on every toggle, `aria-controls="navbar-menu"`
+  on the button
 - Visible focus, inherited from `.btn` on the CTA
-- Keyboard navigation throughout
+- Keyboard navigation throughout: DOM order matches visual order (no CSS
+  `order`), and Escape closes the open menu and returns focus to ☰
+- A "Skip to content" link, injected by `site-chrome.js` as the first
+  focusable element on every page, targets `<main id="main-content">`
 
-Not done: focus is not trapped in the open mobile menu, and there is no
-skip-to-content link.
+Deliberately not done: focus is **not** trapped in the open mobile menu.
+It is a disclosure panel, not a modal dialog — trapping focus in
+something non-modal disorients more than it helps.
 
 ---
 

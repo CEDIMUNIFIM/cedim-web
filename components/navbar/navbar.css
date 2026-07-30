@@ -124,17 +124,15 @@
         display:none;
     }
 
+    /* Sin "order": el marcado ya sale en el orden visual correcto
+       (logo, ☰, menú, CTA). Reordenar por CSS hacía que el tabulador
+       recorriese la barra en un orden distinto al que se ve. */
     .navbar-toggle{
         display:flex;
         align-items:center;
-        order:2;
 
         /* Sostiene los 72px de la fila superior junto con el logo */
         min-height:72px;
-    }
-
-    .navbar-logo{
-        order:1;
     }
 
     /* Cerrada, la barra es translúcida (.70) a propósito. Abierta ocupa
@@ -151,7 +149,6 @@
     }
 
     .navbar.navbar-open .navbar-menu{
-        order:3;
         flex-basis:100%;
     }
 
@@ -167,7 +164,6 @@
 
     .navbar.navbar-open .navbar-cta{
         display:flex;
-        order:4;
         flex-basis:100%;
         justify-content:center;
         margin-bottom:var(--space-5);
