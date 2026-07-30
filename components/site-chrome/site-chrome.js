@@ -78,7 +78,7 @@ function navbarMarkup(){
         <div class="container navbar-container">
 
             <a href="index.html" class="navbar-logo">
-                <span class="logo-text">CEDIM</span>
+                <img src="assets/img/logos/cedim-logo-white.svg" alt="CEDIM" />
             </a>
 
             <nav class="navbar-menu" aria-label="Main Navigation">
@@ -118,7 +118,7 @@ function footerMarkup(){
 
             <div class="footer-brand">
                 <a href="index.html" class="footer-logo">
-                    <span class="logo-text">CEDIM</span>
+                    <img src="assets/img/logos/cedim-logo-white.svg" alt="CEDIM" />
                 </a>
                 <p class="footer-description">
                     Mechatronics Research and Development Centre at

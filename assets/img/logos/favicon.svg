@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="cedim">
+<title>cedim</title>
+<rect width="64" height="64" rx="14" fill="#11415E"/>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round">
+<circle cx="32.00" cy="32.00" r="17.94" stroke-width="6.35"/>
+<path d="M24.57 34.97L39.43 29.03" stroke-width="3.80"/>
+</g>
+</svg>

@@ -87,6 +87,32 @@ a{
     margin-top:var(--space-6);
 }
 
+/* ==========================================
+   404
+========================================== */
+
+.notfound{
+    max-width:60ch;
+    padding-block:var(--space-7);
+}
+
+.notfound-code{
+    margin:0 0 var(--space-3);
+
+    color:var(--color-primary);
+    font-size:5rem;
+    font-weight:700;
+    line-height:1;
+}
+
+@media (max-width: 992px){
+
+    .notfound-code{
+        font-size:3.5rem;
+    }
+
+}
+
 @media (max-width: 992px){
 
     .page-title{
