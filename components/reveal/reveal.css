@@ -1,0 +1,22 @@
+/* ==========================================
+   Reveal — aparición al entrar en pantalla
+========================================== */
+
+/* Estas clases las aplica SOLO reveal.js. El estado oculto no se
+   escribe contra los selectores de los componentes a propósito: sin
+   JavaScript ninguna clase se añade y la página se ve completa.
+
+   reveal.js retira ambas clases al terminar cada transición, porque
+   este "transition" pisaría el propio del componente (p. ej. el hover
+   de .card) mientras la clase siga puesta. */
+
+.reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 600ms ease,transform 600ms ease;
+}
+
+.reveal-visible{
+    opacity:1;
+    transform:none;
+}

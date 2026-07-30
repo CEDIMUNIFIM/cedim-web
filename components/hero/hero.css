@@ -26,6 +26,21 @@
     margin:1rem 0;
 }
 
+/* Degradado blanco → celeste → violeta sobre el titular. Dentro de
+   @supports: sin background-clip el texto quedaría transparente sobre
+   una caja degradada, así que fuera de él se conserva el color plano. */
+@supports (background-clip:text) or (-webkit-background-clip:text){
+
+    .hero-title{
+        background:linear-gradient(100deg,var(--color-text) 35%,var(--color-primary) 75%,var(--color-accent));
+        -webkit-background-clip:text;
+        background-clip:text;
+        -webkit-text-fill-color:transparent;
+        color:transparent;
+    }
+
+}
+
 .hero-description{
     color:var(--color-text-secondary);
     max-width:600px;
@@ -49,10 +64,12 @@
     filter:blur(15px);
 }
 
+/* Solo los dos acentos de la paleta: el verde y el naranja que hubo
+   aquí eran colores de estado, no de marca, y desentonaban. */
 .hero-circle-1{
     width:300px;
     height:300px;
-    background:#38BDF8;
+    background:var(--color-primary);
     top:40px;
     left:80px;
     opacity:.15;
@@ -61,16 +78,16 @@
 .hero-circle-2{
     width:180px;
     height:180px;
-    background:#22C55E;
+    background:var(--color-accent);
     bottom:20px;
     right:40px;
-    opacity:.12;
+    opacity:.14;
 }
 
 .hero-circle-3{
     width:120px;
     height:120px;
-    background:#F59E0B;
+    background:var(--color-primary);
     top:0;
     right:0;
     opacity:.10;

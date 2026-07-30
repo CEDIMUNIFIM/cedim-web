@@ -47,6 +47,35 @@ a{
     margin-bottom:var(--space-6);
 }
 
+/* Etiqueta corta sobre un título de sección ("Who we are", "Impact"):
+   mismo tratamiento que .card-category, para que el ojo la reconozca
+   como rótulo y no como contenido. */
+.section-eyebrow{
+    display:block;
+    margin-bottom:var(--space-2);
+
+    color:var(--color-primary);
+    font-size:var(--font-size-xs);
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+/* Un eyebrow anula el margen que .section-title dejaría entre ambos */
+.section-eyebrow + .section-title{
+    margin-top:0;
+}
+
+/* Banda alternada: rompe la monotonía de secciones consecutivas con el
+   mismo fondo. El tinte queda entre el fondo y la superficie de las
+   tarjetas para que estas sigan destacando; la primera línea es el
+   fallback para navegadores sin color-mix. */
+.section-alt{
+    background:var(--color-surface);
+    background:color-mix(in srgb,var(--color-surface) 55%,var(--color-bg));
+    border-block:1px solid var(--color-border);
+}
+
 /* Cabecera de las páginas interiores. El padding superior compensa
    el navbar fijo (72px), que si no taparía el título al cargar. */
 .page{
