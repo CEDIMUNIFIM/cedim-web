@@ -398,11 +398,15 @@ GitHub
 
 cedim-web/
 
+index.html, about.html, research.html, projects.html,
+project.html, open-calls.html, workshops.html, 404.html
+(todas las páginas viven en la raíz)
+
 assets/
 
 css/
 
-js/
+js/data/
 
 img/
 
@@ -410,13 +414,13 @@ icons/
 
 fonts/
 
-pages/
+components/
 
 docs/
 
 README.md
 
-index.html
+CLAUDE.md
 
 ---
 
