@@ -132,6 +132,10 @@ Can:
 - Register for workshops
 - Explore research areas
 
+Both actions happen through external Google Forms / Microsoft Forms
+linked from each card. The site never collects data itself, so these need
+no account and no backend.
+
 ---
 
 ## Member
@@ -164,16 +168,18 @@ Full platform access.
 
 # 6. Platform Architecture
 
-PUBLIC
+PUBLIC (built)
 
 - Home
 - About
-- Research Areas
-- Projects
+- Research
+- Projects (listing + detail page per project)
+- Open Calls
 - Workshops
-- Announcements
-- News
-- Contact
+- Contact (in the footer)
+
+"Announcements" ships as "Open Calls"; "Research Areas" as "Research".
+The site uses the shorter names throughout. News was dropped.
 
 PRIVATE
 
@@ -194,17 +200,20 @@ Purpose:
 
 Present CEDIM in less than 30 seconds.
 
-Sections:
+The site became multi-page: Research, Projects, Open Calls and Workshops
+each have their own page, and the landing carries only a summary.
+
+Landing sections:
 
 1. Hero
-2. About
-3. Research Areas
-4. Featured Projects
-5. Open Calls
-6. Workshops
-7. News
-8. Contact
-9. Footer
+2. About (summary → `about.html`)
+3. Featured Projects (first 3 → `projects.html`)
+4. Statistics
+5. Partners
+6. Footer (contact lives here, on every page)
+
+News was never built and is not planned: it needs someone to keep it
+current every week, and nobody is assigned to that.
 
 ---
 
@@ -428,23 +437,18 @@ CLAUDE.md
 
 main
 
-Production
+Production — GitHub Pages serves from here
 
 develop
 
-Integration
+Integration — day-to-day work happens here
 
 feature/*
 
-New functionality
+New functionality. Short-lived, merged into `develop` and deleted.
 
-bugfix/*
-
-Bug fixes
-
-hotfix/*
-
-Production fixes
+In practice only `main` and `develop` are in use; `bugfix/*` and
+`hotfix/*` were drafted but never needed at this size.
 
 ---
 
@@ -500,7 +504,7 @@ Phase 2
 
 Landing Page
 
-In Progress
+Completed
 
 ---
 
@@ -508,7 +512,11 @@ Phase 3
 
 Dynamic Content
 
-Planned
+Completed — projects, open calls, workshops, statistics and partners all
+render from data files in `assets/js/data/`. Publishing content is a file
+edit on github.com, no code change.
+
+Remaining in this phase: the published content is still placeholder.
 
 ---
 

@@ -3,6 +3,9 @@
    Main Stylesheet
 ========================================== */
 
+/* fonts.css va primero: declara @font-face, que conviene que el
+   navegador descubra antes de empezar a pintar texto. */
+@import url("fonts.css");
 @import url("variables.css");
 @import url("layout.css");
 @import url("components.css");

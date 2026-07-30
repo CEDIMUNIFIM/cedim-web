@@ -50,17 +50,26 @@ Join CEDIM
 
 # Landing Structure
 
+This blueprint was written for a single-page site. It became multi-page:
+Research, Projects, Open Calls and Workshops each have their own page,
+and the landing keeps only a summary of each. The sections below still
+describe what each area should contain — read them as specs for those
+pages, not for one scrolling page.
+
+Landing page (`index.html`):
+
 1. Navbar
 2. Hero
-3. About CEDIM
-4. Research Areas
-5. Featured Projects
-6. Open Calls
-7. Workshops & Events
-8. Statistics
-9. Partners
-10. Contact
-11. Footer
+3. About CEDIM (summary → `about.html`)
+4. Featured Projects (first 3 → `projects.html`)
+5. Statistics
+6. Partners
+7. Footer (contact lives here)
+
+Own pages:
+
+`about.html`, `research.html`, `projects.html`, `project.html`,
+`open-calls.html`, `workshops.html`, `404.html`
 
 ---
 
@@ -72,17 +81,22 @@ Purpose
 - Institutional branding
 - Main CTA
 
-Components
+Built. Injected on every page from
+`components/site-chrome/site-chrome.js`, which also marks the current
+page in the menu.
 
-- Logo
+- Logo (the official SVG, white variant)
 - Navigation Links
-- Join CEDIM Button
+- Join CEDIM Button (→ `open-calls.html`)
 
 Future
 
 - Login
 - Dashboard
-- Language Selector
+- ~~Language Selector~~ — dropped. The site is English-only by decision,
+  for international reach; retrofitting a second language later is
+  expensive, so this is a deliberate closed door rather than a pending
+  item.
 
 ---
 
@@ -140,21 +154,30 @@ Purpose
 
 Show CEDIM's research fields.
 
-Cards
+Built as four lines in `research.html`, not the six drafted here:
 
-- Robotics
-- Artificial Intelligence
-- IoT
-- Automation
-- Embedded Systems
-- Computer Vision
+- Robotics and Automation
+- Embedded Systems and Control
+- Computer Vision and Applied AI
+- Biomechatronics and Rehabilitation
+
+The four merge pairs from the original six (Robotics + Automation,
+AI + Computer Vision) and add Biomechatronics, which the draft omitted
+despite the centre having projects in it. IoT has no projects yet, so it
+is not listed.
+
+**These four are placeholder content and have not been confirmed by
+CEDIM.** They also double as the `category` values in
+`assets/js/data/projects.js`, so changing them means updating both.
 
 Each Card
 
-- Icon
 - Title
 - Short Description
-- Learn More
+- Tags
+
+No icon and no "Learn More" per card: the section ends with a single
+link to the projects page instead.
 
 ---
 
@@ -164,7 +187,10 @@ Purpose
 
 Highlight current research.
 
-Each Project
+Built from `assets/js/data/projects.js`. All fields below exist, except
+the button: the whole card is a link to `project.html?id=…`, which gives
+a larger click target and keeps one link per card in the accessibility
+tree.
 
 Image
 
@@ -176,11 +202,7 @@ Status
 
 Description
 
-Technologies
-
-Button
-
-View Project
+Technologies (the `tags` field)
 
 Future
 
@@ -196,7 +218,9 @@ Purpose
 
 Promote participation.
 
-Each Call
+Built from `assets/js/data/open-calls.js`; every field below exists. The
+apply button points at the external form and opens in a new tab. A
+closed call shows when it closed instead of a button that leads nowhere.
 
 Title
 
@@ -210,7 +234,7 @@ Apply Button
 
 Future
 
-Online Application
+Online Application — will stay external (Google / Microsoft Forms)
 
 Notifications
 
@@ -222,9 +246,11 @@ Purpose
 
 Show educational activities.
 
-Each Card
+Built from `assets/js/data/workshops.js`; every field below exists. Each
+one is omitted individually when empty, so a workshop with no instructor
+assigned does not render a half-empty line.
 
-Image
+Image — supported, but no photos are in the repo yet
 
 Title
 
@@ -234,7 +260,7 @@ Instructor
 
 Location
 
-Registration Button
+Registration Button — opens the external form in a new tab
 
 Future
 
@@ -248,19 +274,12 @@ Purpose
 
 Show impact.
 
-Examples
+Built. Figures come from `assets/js/data/stats.js`; the section hides
+itself if that file is emptied. Four figures shown:
 
-Projects
+Active projects, Members, Publications, Awards
 
-Members
-
-Publications
-
-Awards
-
-Competitions
-
-Partners
+**The current numbers are placeholders and are not real.**
 
 Future
 
@@ -274,15 +293,14 @@ Purpose
 
 Display institutional credibility.
 
-Examples
+Built. Comes from `assets/js/data/partners.js`; the section hides itself
+if that file is emptied.
 
-UNI
-
-IEEE
-
-Companies
-
-Research Labs
+Each partner shows its logo, or its name as text when no logo file is
+set — which is the case today, since no logos are in the repo yet.
+Logos need the white or single-light-colour version to read on the dark
+background, and **permission from each institution** before publishing
+their mark.
 
 Future
 
@@ -296,6 +314,9 @@ Purpose
 
 Provide communication channels.
 
+Contact is not a section: it lives in the footer, present on every page,
+and `#contact` links jump to it.
+
 Content
 
 Email
@@ -304,7 +325,9 @@ Location
 
 Social Media
 
-Contact Form
+**No contact form.** Forms are external (Google Forms / Microsoft
+Forms) — the site has no backend to receive a submission. Where a call
+needs an application, its card links straight to the form.
 
 Google Maps (Future)
 
@@ -346,19 +369,19 @@ Contact Us
 
 # Responsive Strategy
 
-Desktop
+One breakpoint at 992 px, not three tiers. The card grids use
+`auto-fill minmax(300px, 1fr)`, so tablet already gets two columns and
+desktop three or four without a tablet-specific rule.
 
-Full Layout
+Desktop (>992 px)
 
-Tablet
+Full layout, full menu
 
-2-column sections
+Mobile (≤992 px)
 
-Mobile
+Single column, hamburger menu
 
-Single-column layout
-
-Hamburger Menu
+See the Breakpoints section of `ui-design-system.md` for why.
 
 ---
 
@@ -378,13 +401,17 @@ WCAG AA
 
 # SEO
 
-Semantic Headings
+Semantic Headings ✅
 
-Meta Description
+Meta Description ✅ — one per page
 
-Open Graph
+Open Graph ✅ — absolute URLs, 1200×630 preview image
 
-Twitter Cards
+Twitter Cards ✅ — `summary_large_image`
+
+Known limit: `project.html` carries generic tags. Social crawlers do not
+run JavaScript, so they never see the project that `project-detail.js`
+renders, and every shared `?id=` shows the same preview.
 
 Structured Data (Future)
 
@@ -428,7 +455,7 @@ Mobile App
 
 # MVP Scope
 
-Included
+Included — all shipped:
 
 - Navbar
 - Hero
@@ -438,13 +465,21 @@ Included
 - Open Calls
 - Footer
 
+Also shipped beyond the original MVP: Workshops, project detail pages,
+Statistics, Partners, a 404 page, and social preview tags.
+
+Remaining before this can be called finished: **the content is
+placeholder.** Projects, calls, workshops, research lines, mission,
+vision and figures are all invented and currently live. Replacing them
+is the open task, not any missing feature.
+
 Deferred
 
 - Authentication
 - Dashboard
 - Inventory
 - AI Features
-- Admin Panel
+- Admin Panel — see `CLAUDE.md`; a CMS was costed and deferred
 - Analytics
 
 ---
@@ -461,6 +496,10 @@ Deferred
 ---
 
 # Development Order
+
+All thirteen steps are done, though not in this order — the footer and
+the data layer came before Buttons and Cards, and the multi-page split
+happened after the landing was already assembled.
 
 1. Navbar
 2. Hero

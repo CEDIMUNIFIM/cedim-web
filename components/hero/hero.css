@@ -21,7 +21,7 @@
 }
 
 .hero-title{
-    font-size:4rem;
+    font-size:var(--font-size-7xl);
     line-height:1.1;
     margin:1rem 0;
 }
@@ -29,7 +29,7 @@
 .hero-description{
     color:var(--color-text-secondary);
     max-width:600px;
-    font-size:1.15rem;
+    font-size:var(--font-size-lg);
 }
 
 .hero-actions{
@@ -84,7 +84,7 @@
     }
 
     .hero-title{
-        font-size:3rem;
+        font-size:var(--font-size-5xl);
     }
 
     .hero-actions{

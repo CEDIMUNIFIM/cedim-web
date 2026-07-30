@@ -11,7 +11,7 @@
     padding:.75rem 1.5rem;
 
     font-family:inherit;
-    font-size:1rem;
+    font-size:var(--font-size-base);
     font-weight:600;
     line-height:1;
     white-space:nowrap;

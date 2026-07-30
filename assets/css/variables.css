@@ -1,9 +1,17 @@
 /* ==========================================
    Design Tokens
-========================================== */
+   ==========================================
 
-/* Colors */
+   Solo se declara aquí lo que algún componente consume de verdad.
+   docs/ui-design-system.md define además una paleta de estado con
+   "Info", pasos de espaciado hasta 128, radios "Extra Large" y
+   "Rounded" y una tercera sombra: se añadirán cuando haya algo que
+   los use, para que este archivo no acumule tokens muertos.
+*/
+
 :root{
+
+    /* Colors */
     --color-bg:#0B1120;
     --color-surface:#111827;
     --color-border:#1F2937;
@@ -20,10 +28,37 @@
     /* Typography */
     --font-family:Inter,system-ui,sans-serif;
 
+    /* Escala tipográfica.
+       Los valores son exactamente los que ya tenían los componentes:
+       extraerlos no cambió ningún tamaño.
+
+       Aviso: --font-size-md (1.1rem) y --font-size-lg (1.15rem) están
+       a menos de 1px de distancia. Quedaron así por haber elegido los
+       tamaños uno a uno antes de existir la escala. Unificarlos sería
+       un cambio visual — mínimo, pero real — así que se dejan ambos. */
+    --font-size-xs:.75rem;
+    --font-size-sm:.875rem;
+    --font-size-base:1rem;
+    --font-size-md:1.1rem;
+    --font-size-lg:1.15rem;
+    --font-size-xl:1.35rem;
+    --font-size-2xl:1.4rem;
+    --font-size-3xl:2rem;
+    --font-size-4xl:2.5rem;
+    --font-size-5xl:3rem;
+    --font-size-6xl:3.5rem;
+    --font-size-7xl:4rem;
+    --font-size-8xl:5rem;
+
     /* Border Radius */
     --radius-sm:6px;
     --radius-md:12px;
     --radius-lg:20px;
+
+    /* Shadows. Dos niveles porque solo hay dos en uso, ambos en el
+       navbar: al hacer scroll y con el menú móvil abierto. */
+    --shadow-md:0 8px 24px rgba(0,0,0,.25);
+    --shadow-lg:0 12px 32px rgba(0,0,0,.45);
 
     /* Spacing */
     --space-1:4px;
@@ -37,6 +72,11 @@
 
     /* Container */
     --container-width:1280px;
+
+    /* Breakpoint único mobile/desktop. No se puede usar en @media
+       (las media queries no leen custom properties), queda como
+       referencia del valor que repiten los componentes. */
+    --breakpoint-mobile:992px;
 
     /* Transition */
     --transition:250ms ease;

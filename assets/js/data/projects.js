@@ -21,6 +21,10 @@
                   Solo minúsculas, números y guiones. No repetir ni
                   cambiar uno existente: los enlaces ya compartidos
                   dejarían de funcionar.
+     category     Línea de investigación a la que pertenece:
+                  "Robotics", "Computer Vision", "Biomechatronics",
+                  "Embedded Systems". Se muestra encima del título.
+                  Dejar "" si no aplica.
      title        Nombre del proyecto
      description  Resumen de una o dos líneas (se ve en la tarjeta)
      image        Nombre del archivo dentro de assets/img/projects/
@@ -44,6 +48,7 @@
 const projects = [
     {
         id:"robotic-arm",
+        category:"Robotics",
         title:"6-DOF Robotic Arm",
         description:"Articulated manipulator with inverse kinematics for precision tasks in the laboratory.",
         image:"robotic-arm.svg",
@@ -61,6 +66,7 @@ const projects = [
     },
     {
         id:"inspection-drone",
+        category:"Computer Vision",
         title:"Autonomous Inspection Drone",
         description:"UAV with autonomous navigation for structural inspection of faculty facilities.",
         image:"inspection-drone.svg",
@@ -78,6 +84,7 @@ const projects = [
     },
     {
         id:"exoskeleton",
+        category:"Biomechatronics",
         title:"Rehabilitation Exoskeleton",
         description:"Active upper-limb orthosis aimed at motor recovery therapy.",
         image:"exoskeleton.svg",
@@ -95,6 +102,7 @@ const projects = [
     },
     {
         id:"autonomous-vehicle",
+        category:"Robotics",
         title:"Scale Autonomous Vehicle",
         description:"1:10 platform for testing autonomous driving and obstacle avoidance algorithms.",
         image:"autonomous-vehicle.svg",
@@ -112,6 +120,7 @@ const projects = [
     },
     {
         id:"vision-classification",
+        category:"Computer Vision",
         title:"Vision-Based Sorting System",
         description:"Automatic classification of parts on a production line using convolutional networks.",
         image:"vision-classification.svg",
@@ -129,6 +138,7 @@ const projects = [
     },
     {
         id:"myoelectric-prosthesis",
+        category:"Biomechatronics",
         title:"Myoelectric Hand Prosthesis",
         description:"Prosthesis driven by EMG signals and built with low-cost 3D printing.",
         image:"myoelectric-prosthesis.svg",

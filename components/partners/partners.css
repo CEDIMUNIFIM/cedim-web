@@ -1,0 +1,60 @@
+/* ==========================================
+   Partners Component
+========================================== */
+
+.partners-list{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:var(--space-5);
+}
+
+.partner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:72px;
+    padding:var(--space-4) var(--space-5);
+
+    color:var(--color-text-secondary);
+    font-weight:600;
+    text-align:center;
+
+    background:var(--color-surface);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-md);
+
+    transition:var(--transition);
+}
+
+/* Solo los que llevan enlace son interactivos: el selector a.partner
+   evita que un aliado sin web parezca clicable. */
+a.partner:hover{
+    color:var(--color-text);
+    border-color:var(--color-primary);
+}
+
+/* Los logos se atenúan y recuperan color al pasar por encima, para que
+   una fila de marcas distintas no compita con el contenido propio. */
+.partner img{
+    max-height:40px;
+    width:auto;
+
+    opacity:.75;
+    transition:var(--transition);
+}
+
+a.partner:hover img{
+    opacity:1;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .partner,
+    .partner img{
+        transition:none;
+    }
+
+}

@@ -185,23 +185,29 @@ Structure
 ```text
 Frontend
 
-├── HTML
-├── CSS
-├── JavaScript
-│
-├── Components
-├── Pages
-├── Assets
-└── Utilities
+├── *.html            Pages, all at the repo root
+├── components/       One folder per component (.css + .js)
+└── assets/
+    ├── css/          variables → layout → components → utilities
+    ├── js/data/      Editable content
+    └── img/
 ```
+
+There is no `Pages` folder — pages sit at the root. `Utilities` is a
+stylesheet (`assets/css/utilities.css`), not a folder.
 
 Responsibilities
 
 - User Interface
 - Navigation
-- Validation
-- API Requests
+- Rendering content from the data files
 - Responsive Design
+
+**No API requests, by design.** Content is loaded as plain `<script>`
+data files rather than fetched, because `fetch()` of a local JSON is
+blocked by CORS under `file://` — which would leave every list empty
+whenever a page is opened directly instead of served. There is no
+validation either: the site has no forms (they are external).
 
 ---
 
@@ -487,9 +493,10 @@ Type hints
 
 Meaningful commits
 
-Small pull requests
-
 Documentation-first
+
+Pull requests are not in use: the flow is commit on `develop`, then merge
+into `main`. Worth adopting if more people start contributing at once.
 
 ---
 
@@ -499,7 +506,10 @@ Frontend
 
 User-friendly messages
 
-Graceful degradation
+Graceful degradation — implemented. Every renderer guards its data file
+with `typeof … === "undefined"`, so a syntax error introduced while
+hand-editing content degrades that section to an empty state instead of
+taking the page down. Missing fields are tolerated the same way.
 
 Backend
 
