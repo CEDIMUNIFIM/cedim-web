@@ -372,21 +372,34 @@ Audit logs
 ```text
 cedim-web/
 
+index.html            Home
+about.html            About the centre
+research.html         Research lines
+projects.html         Project listing
+project.html          Project detail (?id=)
+open-calls.html       Open calls
+workshops.html        Workshops
+404.html              Not found
+
 assets/
-    css/
-    js/
-    img/
+    css/              Single entry point: styles.css
+    js/data/          Editable content (projects, open-calls, workshops)
+    img/              Illustrations, logos, social preview
     icons/
     fonts/
 
-pages/
+components/           One folder per component (.css, .js, .html reference)
 
 docs/
 
 README.md
-
-index.html
+CLAUDE.md
 ```
+
+Note: every page sits at the repo root on purpose, so asset paths are
+identical from all of them. The `pages/` subfolder in earlier drafts of
+this document was tried and removed — nesting the project detail page
+one level down caused a run of broken `../` references.
 
 Future:
 
