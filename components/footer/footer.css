@@ -21,10 +21,20 @@
     margin:0 0 var(--space-4);
 }
 
+/* Las propiedades de texto quedan porque estilizan el alt del logo si
+   la imagen no llega a cargar. */
 .footer-logo{
+    display:inline-flex;
+    align-items:center;
+
     font-size:1.4rem;
     font-weight:700;
     color:var(--color-text);
+}
+
+.footer-logo img{
+    height:40px;
+    width:auto;
 }
 
 .footer-description{

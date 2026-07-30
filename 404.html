@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found | CEDIM</title>
+
+  <meta name="description" content="The page you are looking for does not exist at CEDIM, the Mechatronics Research and Development Centre of Universidad Nacional de Ingeniería." />
+
+  <!-- Sin indexar: es una página de error, no contenido -->
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" href="assets/img/logos/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/logos/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<!--
+  GitHub Pages sirve este archivo ante cualquier ruta inexistente.
+
+  Las rutas de assets son relativas, igual que en el resto del sitio.
+  Funciona porque todas las páginas viven en la raíz: un enlace mal
+  escrito cae en /algo.html y las rutas resuelven bien. Si alguien
+  llegara a una ruta inventada con carpetas (/a/b/c), esta página se
+  mostraría sin estilos. Se acepta: no hay subcarpetas que generen ese
+  caso, y usar rutas absolutas ataría el sitio al nombre del repo y se
+  rompería al pasar a un dominio propio.
+-->
+<body>
+
+  <div id="site-navbar"></div>
+
+  <main class="page">
+    <div class="container">
+
+      <div class="notfound">
+
+        <p class="notfound-code">404</p>
+
+        <h1 class="page-title">Page not found</h1>
+
+        <p class="page-intro">
+          The page you are looking for does not exist, or its link has changed.
+          If you reached this from a shared link, the address may be incomplete.
+        </p>
+
+        <div class="section-actions">
+          <a href="index.html" class="btn btn-primary">Back to home</a>
+          <a href="projects.html" class="btn btn-secondary">View projects</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="components/site-chrome/site-chrome.js"></script>
+  <script src="components/navbar/navbar.js"></script>
+  <script src="components/footer/footer.js"></script>
+</body>
+</html>

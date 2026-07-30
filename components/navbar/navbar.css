@@ -31,7 +31,8 @@
 }
 
 /* Los 72px se sostienen desde la fila superior, para que abrir el
-   menú no encoja la barra. */
+   menú no encoja la barra. Las propiedades de texto quedan porque
+   estilizan el alt del logo si la imagen no llega a cargar. */
 .navbar-logo{
 
     display:flex;
@@ -47,9 +48,13 @@
     color:var(--color-text);
 }
 
-.logo-text{
+/* width:auto para no imponer proporción al logo: solo se fija el alto
+   y el ancho se acomoda solo. */
+.navbar-logo img{
 
-    color:var(--color-primary);
+    height:40px;
+
+    width:auto;
 }
 
 .navbar-links{
