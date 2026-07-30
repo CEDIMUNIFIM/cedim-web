@@ -73,7 +73,20 @@ function navbarMarkup(){
 
     }).join("");
 
+    /* El enlace de salto va antes que nada para ser el primer elemento
+       enfocable: quien navega con teclado llega al contenido sin recorrer
+       las siete opciones del menú en cada página. Apunta a
+       #main-content, que todas las páginas declaran en su <main>.
+
+       El botón ☰ va justo después del logo, no al final. Antes cerraba
+       el marcado y, como en móvil se reordena visualmente al principio,
+       al abrir el menú el tabulador saltaba FUERA de la barra en vez de
+       entrar en los enlaces recién mostrados. Con este orden el DOM
+       coincide con el orden visual y ya no hacen falta las reglas
+       "order" que había en navbar.css. */
     return `
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <header class="navbar">
         <div class="container navbar-container">
 
@@ -81,20 +94,21 @@ function navbarMarkup(){
                 <img src="assets/img/logos/cedim-logo-white.svg" alt="CEDIM" />
             </a>
 
-            <nav class="navbar-menu" aria-label="Main Navigation">
+            <button
+                class="navbar-toggle"
+                aria-label="Open navigation menu"
+                aria-controls="navbar-menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="navbar-menu" id="navbar-menu" aria-label="Main Navigation">
                 <ul class="navbar-links">${links}</ul>
             </nav>
 
             <a href="open-calls.html" class="navbar-cta btn btn-primary">
                 Join CEDIM
             </a>
-
-            <button
-                class="navbar-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-                ☰
-            </button>
 
         </div>
     </header>`;

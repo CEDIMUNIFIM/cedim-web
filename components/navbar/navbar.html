@@ -3,7 +3,11 @@
      OJO: este markup ya NO se copia a las páginas. El navbar se genera
      desde components/site-chrome/site-chrome.js, que es donde hay que
      editar las opciones del menú. Este archivo queda solo como
-     documentación de las clases CSS. -->
+     documentación de las clases CSS.
+
+     El botón ☰ va justo después del logo A PROPÓSITO: el CSS ya no
+     reordena nada con "order", así que el orden del marcado es el orden
+     visual y el del tabulador. aria-controls apunta al id del nav. -->
 
 <header class="navbar">
     <div class="container navbar-container">
@@ -12,7 +16,15 @@
             <img src="assets/img/logos/cedim-logo-white.svg" alt="CEDIM" />
         </a>
 
-        <nav class="navbar-menu" aria-label="Main Navigation">
+        <button
+            class="navbar-toggle"
+            aria-label="Open navigation menu"
+            aria-controls="navbar-menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navbar-menu" id="navbar-menu" aria-label="Main Navigation">
             <ul class="navbar-links">
                 <li><a href="index.html" class="is-active">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -22,13 +34,6 @@
         <a href="open-calls.html" class="navbar-cta btn btn-primary">
             Join CEDIM
         </a>
-
-        <button
-            class="navbar-toggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
-            ☰
-        </button>
 
     </div>
 </header>

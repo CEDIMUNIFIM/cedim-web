@@ -1,0 +1,41 @@
+/* ==========================================
+   Site Chrome — enlace de salto al contenido
+========================================== */
+
+/* Oculto hasta recibir el foco. Se desplaza fuera de la pantalla en vez
+   de usar display:none, porque un elemento con display:none no es
+   enfocable y el enlace no llegaría a existir para el teclado. */
+.skip-link{
+    position:fixed;
+    top:0;
+    left:var(--space-4);
+
+    /* Por encima del navbar, que está en 1000 */
+    z-index:1100;
+
+    padding:var(--space-3) var(--space-5);
+
+    color:var(--color-bg);
+    background:var(--color-primary);
+    font-weight:600;
+
+    border-bottom-left-radius:var(--radius-md);
+    border-bottom-right-radius:var(--radius-md);
+
+    transform:translateY(-100%);
+    transition:transform var(--transition);
+}
+
+.skip-link:focus{
+    transform:translateY(0);
+    outline:2px solid var(--color-text);
+    outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .skip-link{
+        transition:none;
+    }
+
+}
