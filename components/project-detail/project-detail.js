@@ -74,6 +74,13 @@ function renderProject(container,project){
 
     fragment.append(createBackLink());
 
+    if(project.category){
+        const category = document.createElement("p");
+        category.className = "card-category project-category";
+        category.textContent = project.category;
+        fragment.append(category);
+    }
+
     const header = document.createElement("div");
     header.className = "project-header";
 

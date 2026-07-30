@@ -41,7 +41,7 @@
 
     min-height:72px;
 
-    font-size:1.4rem;
+    font-size:var(--font-size-2xl);
 
     font-weight:700;
 
@@ -104,6 +104,8 @@
 
     color:var(--color-text);
 
+    /* Fuera de la escala tipográfica a propósito: dimensiona el glifo
+       ☰, no texto. Se ajusta al tamaño del icono, no al del contenido. */
     font-size:1.8rem;
 
     cursor:pointer;
@@ -141,7 +143,7 @@
        backdrop-filter, que varios navegadores móviles ignoran. */
     .navbar.navbar-open{
         background:var(--color-bg);
-        box-shadow:0 12px 32px rgba(0,0,0,.45);
+        box-shadow:var(--shadow-lg);
     }
 
     .navbar.navbar-open .navbar-container{
@@ -177,6 +179,6 @@
 
     background:rgba(11,17,32,.95);
 
-    box-shadow:0 8px 24px rgba(0,0,0,.25);
+    box-shadow:var(--shadow-md);
 
 }

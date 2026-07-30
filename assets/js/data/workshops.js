@@ -17,6 +17,15 @@
    Campos de cada taller:
      title        Nombre del taller
      description  Resumen de los contenidos
+     image        Nombre del archivo dentro de assets/img/workshops/
+                  Solo el nombre, no la ruta completa. Si se deja
+                  vacío ("") la tarjeta se muestra sin imagen.
+                  Ahora mismo van todos vacíos: no hay fotos aún.
+     date         Cuándo empieza, tal como se quiera leer:
+                  "Starts 12 August 2026". Dejar "" si no hay fecha.
+     instructor   Quién lo dicta. Dejar "" si no está definido.
+     location     Dónde se dicta: aula, laboratorio, "Online".
+                  Dejar "" si no está definido.
      tags         Lista de etiquetas: área y nivel.
                   Puede ir vacía: []
      meta         Texto pequeño al pie (duración, número de sesiones).
@@ -43,6 +52,10 @@ const workshops = [
     {
         title:"Introduction to ROS 2",
         description:"Framework fundamentals, nodes, topics, and simulation in Gazebo.",
+        image:"",
+        date:"Starts 17 August 2026",
+        instructor:"Robotics research line",
+        location:"Laboratory A3-301",
         tags:["Robotics","Intermediate"],
         meta:"8 sessions",
         actionLabel:"",
@@ -51,6 +64,10 @@ const workshops = [
     {
         title:"CAD design with SolidWorks",
         description:"Part modelling, assemblies, and technical drawings for prototyping.",
+        image:"",
+        date:"Starts 24 August 2026",
+        instructor:"Design team",
+        location:"Computer lab A3-205",
         tags:["Design","Beginner"],
         meta:"6 sessions",
         actionLabel:"",
@@ -59,6 +76,10 @@ const workshops = [
     {
         title:"STM32 microcontrollers",
         description:"Embedded systems programming, peripherals, and serial communication.",
+        image:"",
+        date:"Starts 7 September 2026",
+        instructor:"Embedded systems research line",
+        location:"Laboratory A3-301",
         tags:["Embedded","Intermediate"],
         meta:"10 sessions",
         actionLabel:"",
@@ -67,6 +88,10 @@ const workshops = [
     {
         title:"Computer vision with OpenCV",
         description:"Image processing, object detection, and camera calibration.",
+        image:"",
+        date:"Starts 21 September 2026",
+        instructor:"Computer vision research line",
+        location:"Online",
         tags:["Vision","Intermediate"],
         meta:"8 sessions",
         actionLabel:"",

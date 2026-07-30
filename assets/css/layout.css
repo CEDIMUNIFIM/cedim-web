@@ -56,7 +56,7 @@ a{
 
 .page-title{
     margin:0;
-    font-size:2.5rem;
+    font-size:var(--font-size-4xl);
     line-height:1.15;
 }
 
@@ -65,7 +65,7 @@ a{
     margin:var(--space-4) 0 var(--space-7);
 
     color:var(--color-text-secondary);
-    font-size:1.1rem;
+    font-size:var(--font-size-md);
 }
 
 /* Bloque de texto corrido */
@@ -100,7 +100,7 @@ a{
     margin:0 0 var(--space-3);
 
     color:var(--color-primary);
-    font-size:5rem;
+    font-size:var(--font-size-8xl);
     font-weight:700;
     line-height:1;
 }
@@ -108,7 +108,7 @@ a{
 @media (max-width: 992px){
 
     .notfound-code{
-        font-size:3.5rem;
+        font-size:var(--font-size-6xl);
     }
 
 }
@@ -116,7 +116,7 @@ a{
 @media (max-width: 992px){
 
     .page-title{
-        font-size:2rem;
+        font-size:var(--font-size-3xl);
     }
 
 }

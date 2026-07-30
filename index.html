@@ -106,6 +106,26 @@
     </div>
   </section>
 
+  <!-- STATISTICS — se oculta sola si stats.js queda vacío -->
+  <section class="section" id="stats-section">
+    <div class="container">
+      <h2 class="section-title">CEDIM in numbers</h2>
+
+      <!-- Rendered by components/cards/cards.js -->
+      <div id="stats-grid" class="cards-grid cards-grid-stats"></div>
+    </div>
+  </section>
+
+  <!-- PARTNERS — se oculta sola si partners.js queda vacío -->
+  <section class="section" id="partners-section">
+    <div class="container">
+      <h2 class="section-title">Partners</h2>
+
+      <!-- Rendered by components/partners/partners.js -->
+      <div id="partners-list" class="partners-list"></div>
+    </div>
+  </section>
+
   <div id="site-footer"></div>
 
   <!-- The chrome is injected before the scripts that query it -->
@@ -115,6 +135,10 @@
 
   <!-- Data goes before the renderer that consumes it -->
   <script src="assets/js/data/projects.js"></script>
+  <script src="assets/js/data/stats.js"></script>
   <script src="components/cards/cards.js"></script>
+
+  <script src="assets/js/data/partners.js"></script>
+  <script src="components/partners/partners.js"></script>
 </body>
 </html>
