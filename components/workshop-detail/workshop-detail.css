@@ -1,0 +1,116 @@
+/* ==========================================
+   Workshop Detail — páginas de workshop con contenido propio
+========================================== */
+
+.workshop-speaker{
+    margin:var(--space-4) 0 0;
+    color:var(--color-text-secondary);
+}
+
+.workshop-speaker strong{
+    color:var(--color-text);
+}
+
+.workshop-facts,
+.workshop-repo{
+    padding:var(--space-5);
+    background:var(--color-surface);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-md);
+}
+
+.workshop-facts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:var(--space-4);
+    margin:var(--space-6) 0 0;
+}
+
+.workshop-facts dt{
+    color:var(--color-text-secondary);
+    font-size:var(--font-size-xs);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+.workshop-facts dd{
+    margin:var(--space-1) 0 0;
+    font-size:var(--font-size-md);
+    font-weight:600;
+}
+
+.workshop-about{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:var(--space-7);
+    margin-top:var(--space-7);
+}
+
+.workshop-about .prose{
+    margin-bottom:0;
+}
+
+.workshop-syllabus{
+    margin-top:var(--space-7);
+}
+
+.workshop-syllabus-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--space-4);
+}
+
+.workshop-syllabus-head .project-section-title{
+    margin:0;
+}
+
+.workshop-syllabus-meta{
+    margin:var(--space-2) 0 var(--space-4);
+    color:var(--color-text-secondary);
+}
+
+.workshop-class{
+    background:var(--color-surface);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-md);
+}
+
+.workshop-class + .workshop-class{
+    margin-top:var(--space-3);
+}
+
+.workshop-class summary{
+    padding:var(--space-4) var(--space-5);
+    font-weight:600;
+    cursor:pointer;
+}
+
+.workshop-class summary:focus-visible{
+    outline:2px solid var(--color-primary);
+    outline-offset:2px;
+}
+
+.workshop-class ul{
+    margin:0;
+    padding:0 var(--space-5) var(--space-4) var(--space-6);
+    color:var(--color-text-secondary);
+}
+
+.workshop-repo{
+    margin-top:var(--space-7);
+}
+
+.workshop-repo-text{
+    margin:0 0 var(--space-4);
+    color:var(--color-text-secondary);
+}
+
+@media (max-width: 992px){
+
+    .workshop-about{
+        grid-template-columns:1fr;
+        gap:var(--space-6);
+    }
+
+}

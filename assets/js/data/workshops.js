@@ -96,5 +96,17 @@ const workshops = [
         meta:"8 sessions",
         actionLabel:"",
         actionHref:""
-    }
+    },
+    {
+        title:"Arduino Basics",
+        description:"Hands-on introduction to microcontrollers, sensors and actuators. Taught in Spanish.",
+        image:"",
+        date:"Starts ...",
+        instructor:"Nombre del ponente",
+        location:"Classroom ...",
+        tags:["Embedded","Beginner"],
+        meta:"4 classes · 2 hours each",
+        actionLabel:"View workshop",
+        actionHref:"workshop-arduino.html"
+    }   
 ];
