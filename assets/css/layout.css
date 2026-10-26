@@ -154,3 +154,405 @@ a{
     display:grid;
     gap:var(--space-5);
 }
+.arduino-hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 12, 22, 0.92),
+            rgba(8, 12, 22, 0.45)
+        ),
+        url("../img/arduino_basics.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 60px 40px;
+    border-radius: 16px;
+    color: white;
+}
+.workshop-facts.workshop-facts-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px !important;
+
+  margin: 32px 0 48px !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Cada tarjeta tendrá su propio fondo */
+.workshop-facts.workshop-facts-grid .fact-card {
+  position: relative;
+  min-width: 0;
+  min-height: 155px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin: 0 !important;
+  padding: 24px 22px !important;
+
+  background: linear-gradient(
+    145deg,
+    #172235 0%,
+    #111827 100%
+  ) !important;
+
+  border: 1px solid #29384d !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Pequeño acento cian en la parte superior */
+.workshop-facts.workshop-facts-grid .fact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+
+  width: 38px;
+  height: 3px;
+
+  background: #22d3ee;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Efecto al pasar el cursor */
+.workshop-facts.workshop-facts-grid .fact-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b8296 !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiqueta y numeración */
+.workshop-facts.workshop-facts-grid .fact-card dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 !important;
+
+  color: #a8b8cc !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* El número ahora sí parece una insignia */
+.workshop-facts.workshop-facts-grid .fact-icon {
+  display: inline-flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(34, 211, 238, 0.10) !important;
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  border-radius: 10px;
+
+  color: #67e8f9 !important;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* Valor principal */
+.workshop-facts.workshop-facts-grid .fact-card dd {
+  margin: 0 !important;
+
+  color: #f5f8fc !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .workshop-facts.workshop-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .workshop-facts.workshop-facts-grid {
+    gap: 12px !important;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-card {
+    min-height: 140px;
+    padding: 18px 14px !important;
+    gap: 18px;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-card::before {
+    left: 14px;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-card dt {
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-card dd {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Accesibilidad: respetar la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .workshop-facts.workshop-facts-grid .fact-card {
+    transition: none;
+  }
+
+  .workshop-facts.workshop-facts-grid .fact-card:hover {
+    transform: none;
+  }
+}
+.workshop-facts-grid .fact-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.workshop-facts.workshop-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 32px 0 48px;
+  padding: 0;
+  border: 0;
+}
+
+.workshop-facts-grid .fact-card {
+  min-width: 0;
+  margin: 0;
+  padding: 22px 20px;
+  border: 1px solid #e1e7ee;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(20, 35, 55, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.workshop-facts-grid .fact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(20, 35, 55, 0.09);
+}
+
+.workshop-facts-grid .fact-card dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: #5c6878;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.workshop-facts-grid .fact-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #e8f7fb;
+  color: #087c9a;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.workshop-facts-grid .fact-card dd {
+  margin: 0;
+  color: #152235;
+  font-size: 1.15rem;
+  font-weight: 750;
+}
+
+
+
+.arduino-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  margin: 48px 0 64px;
+  padding: clamp(20px, 3vw, 36px);
+  overflow: hidden;
+  border: 1px solid #e1e7ee;
+  border-radius: 24px;
+  background: #f8fafc;
+}
+
+.arduino-showcase-media {
+  position: relative;
+  min-width: 0;
+}
+
+.arduino-showcase-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.arduino-image-caption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(10, 20, 35, 0.78);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.arduino-showcase-content {
+  min-width: 0;
+}
+
+.arduino-eyebrow {
+  margin: 0 0 14px;
+  color: #087c9a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.arduino-showcase-content h2 {
+  margin: 0 0 18px;
+  color: #152235;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.arduino-showcase-description {
+  margin: 0;
+  color: #536174;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.arduino-showcase-list {
+  display: grid;
+  gap: 20px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arduino-showcase-list li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.showcase-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c8e8ef;
+  border-radius: 50%;
+  color: #087c9a;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.arduino-showcase-list strong {
+  display: block;
+  margin: 0 0 5px;
+  color: #152235;
+  font-size: 0.98rem;
+}
+
+.arduino-showcase-list p {
+  margin: 0;
+  color: #617084;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+
+/* Adaptación a tabletas y móviles */
+
+@media (max-width: 900px) {
+  .workshop-facts.workshop-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arduino-showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arduino-showcase-media img {
+    aspect-ratio: 16 / 10;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workshop-facts.workshop-facts-grid {
+    gap: 10px;
+  }
+
+  .workshop-facts-grid .fact-card {
+    padding: 16px 12px;
+  }
+
+  .workshop-facts-grid .fact-card dd {
+    font-size: 1rem;
+  }
+
+  .arduino-showcase {
+    padding: 16px;
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workshop-facts-grid .fact-card {
+    transition: none;
+  }
+
+  .workshop-facts-grid .fact-card:hover {
+    transform: none;
+  }
+}
