@@ -1,0 +1,41 @@
+/* ==========================================
+   Hero Intro Component
+========================================== */
+
+/* Todo cuelga de .hero-intro-active, que añade el JS solo mientras la
+   intro corre: si el script no se ejecuta, o se pide reducir el
+   movimiento, el hero queda exactamente como antes. */
+
+.hero-intro-active{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-intro-canvas{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+    z-index:0;
+}
+
+.hero-intro-active .hero-container{
+    position:relative;
+    z-index:1;
+}
+
+/* La transición solo existe fuera del estado "pending": así el texto se
+   oculta al instante al empezar (sin parpadeo de visible → invisible) y
+   aparece suave cuando el JS retira .hero-intro-pending. */
+.hero-intro-active:not(.hero-intro-pending) .hero-content{
+    transition:opacity .6s ease,transform .6s ease;
+}
+
+/* El estado oculto lo pone el JS, nunca el CSS por sí solo */
+.hero-intro-pending .hero-content{
+    opacity:0;
+    transform:translateY(12px);
+}
