@@ -556,3 +556,321 @@ a{
     transform: none;
   }
 }
+.workshop-syllabus {
+  margin: 64px 0;
+}
+
+.workshop-syllabus .workshop-class {
+  margin: 12px 0;
+  overflow: hidden;
+  border: 1px solid #e1e7ee;
+  border-radius: 15px;
+  background: #ffffff;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.workshop-syllabus .workshop-class[open] {
+  border-color: #a8dce7;
+  box-shadow: 0 8px 24px rgba(20, 35, 55, 0.06);
+}
+
+.workshop-syllabus .workshop-class summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  cursor: pointer;
+  list-style: none;
+  color: #152235;
+  font-weight: 700;
+}
+
+.workshop-syllabus .workshop-class summary::-webkit-details-marker {
+  display: none;
+}
+
+.lesson-number {
+  display: inline-flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #e8f7fb;
+  color: #087c9a;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.lesson-title {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.5;
+}
+
+/* Símbolo para abrir y cerrar */
+
+.workshop-syllabus .workshop-class summary::after {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f0f5f8;
+  color: #26374b;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.workshop-syllabus .workshop-class[open] summary::after {
+  content: "−";
+}
+
+.lesson-content {
+  padding: 0 24px 24px 78px;
+  color: #536174;
+}
+
+.lesson-content > p {
+  margin: 0 0 14px;
+  line-height: 1.75;
+}
+
+.lesson-content ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lesson-content li {
+  padding-left: 4px;
+  line-height: 1.6;
+}
+
+.workshop-syllabus .workshop-class summary:focus-visible {
+  outline: 3px solid #58b8ce;
+  outline-offset: -4px;
+}
+
+@media (max-width: 600px) {
+  .workshop-syllabus .workshop-class summary {
+    gap: 12px;
+    padding: 16px 12px;
+  }
+
+  .lesson-number {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .lesson-content {
+    padding: 0 16px 20px;
+  }
+}
+.arduino-showcase {
+  background: #0f172a !important;
+  border-color: #26364b !important;
+}
+
+/* Título principal */
+.arduino-showcase-content h2 {
+  color: #f1f5f9 !important;
+}
+
+/* Texto descriptivo */
+.arduino-showcase-description {
+  color: #b6c4d6 !important;
+}
+
+/* Títulos de cada objetivo */
+.arduino-showcase-list strong {
+  color: #f1f5f9 !important;
+}
+
+/* Descripciones de los objetivos */
+.arduino-showcase-list p {
+  color: #a6b5c8 !important;
+}
+
+/* Números decorativos */
+.showcase-number {
+  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(34, 211, 238, 0.3);
+  color: #67e8f9;
+}
+.workshop-syllabus {
+  padding: 32px;
+  margin: 64px 0;
+  border: 1px solid #263b53;
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(34, 211, 238, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #101c30, #0b1220);
+}
+
+/* Título y subtítulo */
+.workshop-syllabus .project-section-title {
+  color: #f1f5f9;
+}
+
+.workshop-syllabus .workshop-syllabus-meta {
+  color: #9eb2ca;
+  margin-bottom: 24px;
+}
+
+/* Base de cada clase */
+.workshop-syllabus .workshop-class {
+  --lesson-accent: #67e8f9;
+  --lesson-bg: rgba(34, 211, 238, 0.10);
+
+  margin: 14px 0;
+  overflow: hidden;
+
+  background: linear-gradient(
+    110deg,
+    #18263b,
+    #131f32
+  ) !important;
+
+  border: 1px solid #304158 !important;
+  border-left: 4px solid var(--lesson-accent) !important;
+  border-radius: 14px !important;
+
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Un acento distinto para cada clase */
+.workshop-syllabus .workshop-class:nth-of-type(1) {
+  --lesson-accent: #67e8f9;
+  --lesson-bg: rgba(34, 211, 238, 0.12);
+}
+
+.workshop-syllabus .workshop-class:nth-of-type(2) {
+  --lesson-accent: #a5b4fc;
+  --lesson-bg: rgba(129, 140, 248, 0.14);
+}
+
+.workshop-syllabus .workshop-class:nth-of-type(3) {
+  --lesson-accent: #5eead4;
+  --lesson-bg: rgba(45, 212, 191, 0.12);
+}
+
+.workshop-syllabus .workshop-class:nth-of-type(4) {
+  --lesson-accent: #f0abfc;
+  --lesson-bg: rgba(232, 121, 249, 0.12);
+}
+
+/* Efecto al pasar el cursor */
+.workshop-syllabus .workshop-class:hover {
+  transform: translateY(-2px);
+  border-color: var(--lesson-accent) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.17);
+}
+
+/* Cuando una clase está desplegada */
+.workshop-syllabus .workshop-class[open] {
+  border-color: var(--lesson-accent) !important;
+  box-shadow: 0 0 0 1px var(--lesson-bg);
+}
+
+/* Fila que se pulsa para abrir la clase */
+.workshop-syllabus .workshop-class summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 20px;
+  color: #f1f5f9 !important;
+  font-weight: 700;
+
+  transition: background 180ms ease;
+}
+
+.workshop-syllabus .workshop-class summary:hover {
+  background: var(--lesson-bg);
+}
+
+/* Número de clase */
+.workshop-syllabus .lesson-number {
+  flex-shrink: 0;
+
+  background: var(--lesson-bg) !important;
+  border: 1px solid var(--lesson-accent) !important;
+  color: var(--lesson-accent) !important;
+
+  border-radius: 11px;
+  font-weight: 800;
+}
+
+/* Nombre de la clase */
+.workshop-syllabus .lesson-title {
+  color: #f1f5f9;
+}
+
+/* Símbolo para expandir */
+.workshop-syllabus .workshop-class summary::after {
+  color: var(--lesson-accent) !important;
+  background: var(--lesson-bg) !important;
+}
+
+/* Contenido desplegado */
+.workshop-syllabus .lesson-content {
+  padding-top: 0;
+  color: #bac9dc !important;
+}
+
+.workshop-syllabus .lesson-content > p {
+  color: #bac9dc;
+  line-height: 1.8;
+}
+
+.workshop-syllabus .lesson-content ul {
+  margin-top: 12px;
+}
+
+.workshop-syllabus .lesson-content li {
+  padding: 5px 0;
+  color: #d3deeb;
+}
+
+.workshop-syllabus .lesson-content li::marker {
+  color: var(--lesson-accent);
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .workshop-syllabus {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .workshop-syllabus .workshop-class summary {
+    gap: 10px;
+    padding: 15px 12px;
+  }
+}
+
+/* Respetar las preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .workshop-syllabus .workshop-class {
+    transition: none;
+  }
+
+  .workshop-syllabus .workshop-class:hover {
+    transform: none;
+  }
+}
